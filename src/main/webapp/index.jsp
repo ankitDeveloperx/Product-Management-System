@@ -44,6 +44,17 @@
     .button-container a:hover {
         background-color: #0056b3;
     }
+    
+     footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: grey;
+    color: black;
+    text-align: center;
+    height:fit-content;
+    }
 </style>
 </head>
 <body>
@@ -56,5 +67,9 @@
             <a href="deleteProduct.jsp">Delete Product</a>
         </div>
     </div>
+    
+    <footer>
+    	<p>Copyright © 2025 Ankit Kumar ®</p>
+    </footer>
 </body>
 </html>

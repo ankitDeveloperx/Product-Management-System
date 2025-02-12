@@ -52,11 +52,43 @@
     }
     .icon{
     	font-size:25px;
+    	background-color:grey;
+    	border-radius:5px;
+    	border:none;
+    	box-shadow:0px 0px 5px black;
+    }
+    
+    #u:hover{
+     background-color:green;
+     cursor:pointer;
+    }
+    
+    #d:hover{
+     background-color:red;
+     cursor:pointer;
+    }
+    
+    footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: grey;
+    color: black;
+    text-align: center;
+    height:fit-content;
+    }
+    
+    h1{
+    text-align:center;
+    color:grey;
     }
 </style>
 </head>
 <body>
-
+		
+	<h1>All Products</h1>
+	
     <%
     ResultSet rs = (ResultSet) request.getAttribute("rs");
     %>
@@ -84,8 +116,8 @@
                 <td><%= rs.getString("ProductPrice") %></td>
                 <td><%= rs.getString("ProductBrand") %></td>
                 <td><%= rs.getString("ProductQuantity") %></td>
-				<td><a href="updateProduct.jsp"><button class="icon">🛠️</button></a></td>           
-				<td><a href="delete1?productBatch=<%=rs.getString("ProductBatchNo")%>"><button class="icon">❌</button></a></td>
+				<td><a href="updateProduct.jsp"><button  type="submit" class="icon" id="u">🛠️</button></a></td>           
+				<td><a href="delFromView?product_batch=<%=rs.getString("ProductBatchNo")%>"><button class="icon" id="d">❌</button></a></td>
             </tr>
             <%
                 }
@@ -104,5 +136,9 @@
 	<div class="button-container">
         <a href="createProduct.jsp">Create Product</a>
     </div>
+    
+    <footer>
+    	<p>Copyright © 2025 Ankit Kumar ®</p>
+    </footer>
 </body>
 </html>

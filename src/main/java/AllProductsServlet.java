@@ -13,7 +13,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
-@WebServlet(urlPatterns = "/allProducts")
+@WebServlet(urlPatterns = "/allProducts" , loadOnStartup = 0)
 public class AllProductsServlet extends HttpServlet {
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
@@ -28,6 +28,9 @@ public class AllProductsServlet extends HttpServlet {
 			RequestDispatcher rd = req.getRequestDispatcher("allProducts.jsp");
 			rd.forward(req, res);
 			
+			rs.close();
+            ps.close();
+            con.close();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}

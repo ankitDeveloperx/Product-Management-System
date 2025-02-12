@@ -50,6 +50,17 @@
     button:hover {
         background-color: #c82333; /* Darker red on hover */
     }
+    
+     footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: grey;
+    color: black;
+    text-align: center;
+    height:fit-content;
+    }
 </style>
 </head>
 <body>
@@ -75,5 +86,9 @@
             <button type="submit">Delete</button>
         </form>
     </div>
+    
+    <footer>
+    	<p>Copyright © 2025 Ankit Kumar ®</p>
+    </footer>
 </body>
 </html>

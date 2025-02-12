@@ -50,6 +50,7 @@
     button:hover {
         background-color: #2575fc;
     }
+    
 </style>
 </head>
 <body>
@@ -89,5 +90,6 @@
             <button type="submit">Update</button>
         </form>
     </div>
+    
 </body>
 </html>

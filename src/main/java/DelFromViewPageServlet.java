@@ -10,17 +10,17 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 
-@WebServlet(urlPatterns="/delete1")
+@WebServlet(urlPatterns="/delFromView" , loadOnStartup = 0)
 public class DelFromViewPageServlet extends HttpServlet {
 
 	@Override
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 		
-	String productBatch = req.getParameter("productBatch");
+	String productBatch = req.getParameter("product_batch");
 	
 	try {
 		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipkart" , "root" , "root" );
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flipkart" , "root" , "Ankit@143" );
 		PreparedStatement ps = con.prepareStatement("delete from product where ProductBatchNo = ?");
 
 		ps.setString(1, productBatch);
@@ -36,15 +36,9 @@ public class DelFromViewPageServlet extends HttpServlet {
 		e.printStackTrace();
 	}
 	
-	RequestDispatcher rd = req.getRequestDispatcher("allProducts.jsp");
+	
+	RequestDispatcher rd = req.getRequestDispatcher("allProducts");
 	 rd.forward(req, res);
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
 }
